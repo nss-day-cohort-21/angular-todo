@@ -9,9 +9,14 @@
 
 app.controller("listCtrl", function($scope, todoFactory, userFactory){
 
-    
-    const showAllTasks = function(){
+    $scope.tasks = [];
 
+    const showAllTasks = function(){
+    	todoFactory.getAllTasks()
+    	.then((tasks) => {
+    		console.log("showAllTasks from promise", tasks);
+    		$scope.tasks =  tasks;
+    	});
     };
 
     
@@ -24,5 +29,6 @@ app.controller("listCtrl", function($scope, todoFactory, userFactory){
 
     };
 
+    showAllTasks();
 
 });
