@@ -12,6 +12,7 @@
 </div>
 
 <div ng-repeat="thingy in tasks | filter: false:isCompleted">
+<!-- {{tasks | json}} -->
     <div class="panel panel-default" ng-hide="thingy.isCompleted">
         <div class="panel-body">
             <div class="col-xs-1"><input type="checkbox" ng-model="thingy.isCompleted" ng-change="updateComplete(thingy.id)"/></div>

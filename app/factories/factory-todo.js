@@ -40,8 +40,16 @@ app.factory("todoFactory", function($q, $http, FBCreds){
 
     };
 
-    const getSingleTask = function(){
-
+    const getSingleTask = function(itemId){
+        return $q((resolve, reject) =>{
+            $http.get(`${FBCreds.databaseURL}/items/${itemId}.json`)
+            .then((itemObj) => {
+                resolve(itemObj.data);
+            })
+            .catch((error) => {
+                reject(error);
+            });
+        });
     };
 
     return {getAllTasks, addTask, editTask, deleteTask, getSingleTask};
