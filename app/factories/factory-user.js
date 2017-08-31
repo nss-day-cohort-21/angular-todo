@@ -39,4 +39,6 @@ app.factory("userFactory", function($q, $http){
 
     };
 
+    return {getCurrentUser, loginGoogle, logIn, logOut, register, isAuthenticated};
+
 });
