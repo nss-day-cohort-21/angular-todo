@@ -9,11 +9,13 @@
 
 app.controller("listCtrl", function($scope, todoFactory, userFactory){
 
+	$scope.tasks = [];
 
     const showAllTasks = function(){
     	todoFactory.getAllTasks()
     	.then((tasks) => {
     		console.log("showAllTasks from Promise", tasks);
+    		$scope.tasks = tasks;
     	});
     };
 
