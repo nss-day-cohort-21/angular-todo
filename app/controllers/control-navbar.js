@@ -1,5 +1,5 @@
 'use strict';
 
-app.controller('NavCtrl', function($scope, $window) {
+app.controller('navCtrl', function($scope, $window) {
 	$scope.isLoggedIn = false;
 });

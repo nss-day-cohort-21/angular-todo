@@ -9,20 +9,24 @@
 
 app.controller("listCtrl", function($scope, todoFactory, userFactory){
 
-    
-    const showAllTasks = function(){
 
+    const showAllTasks = function(){
+    	todoFactory.getAllTasks()
+    	.then((tasks) => {
+    		console.log("showAllTasks from Promise", tasks);
+    	});
     };
 
-    
+
     const deleteTask = function(){
 
     };
 
-    
+
     const toggleDoneTask = function(){
 
     };
 
+    showAllTasks();
 
 });
