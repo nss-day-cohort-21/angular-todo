@@ -3,7 +3,7 @@
 /*
 
     provide the basic crud interactions with firebase
- 
+
 */
 
 app.factory("todoFactory", function($q, $http){
