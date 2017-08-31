@@ -11,8 +11,8 @@ app.controller("addTaskCtrl", function($scope, todoFactory){
 
     const submitTask = function(){
 
-    }
+    };
 
-    
+
 
 });
