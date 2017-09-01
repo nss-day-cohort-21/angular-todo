@@ -12,6 +12,10 @@ app.config(($routeProvider) => {
 		templateUrl: 'partials/list.html',
 		controller: 'listCtrl'
 	})
+	.when('/item/newItem', {
+		templateUrl: 'partials/form.html',
+		controller: 'addTaskCtrl'
+	})
 	.when('/task/:itemId', {
 		templateUrl: 'partials/details.html',
 		controller: 'detailTaskCtrl'

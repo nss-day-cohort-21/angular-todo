@@ -8,7 +8,7 @@
 
 app.controller("editTaskCtrl", function($scope, todoFactory, $routeParams, $location){
 
-	$scope.title = "New Task";
+	$scope.title = "Edit Task";
 	$scope.submitButtonText = "Edit Item";
 
 	$scope.task = {
