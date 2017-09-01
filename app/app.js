@@ -8,9 +8,17 @@ app.config(($routeProvider) => {
 		templateUrl: 'partials/list.html',
 		controller: 'listCtrl'
 	})
+	.when('/task-list', {
+		templateUrl: 'partials/list.html',
+		controller: 'listCtrl'
+	})
 	.when('/task/:itemId', {
 		templateUrl: 'partials/details.html',
 		controller: 'detailTaskCtrl'
+	})
+	.when('/task/:itemId/edit', {
+		templateUrl: 'partials/form.html',
+		controller: 'editTaskCtrl'
 	})
 	.otherwise('/');
 });

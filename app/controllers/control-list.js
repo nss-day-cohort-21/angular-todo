@@ -26,7 +26,7 @@ app.controller("listCtrl", function($scope, todoFactory, userFactory){
 
     //TODO fix this toggle happens too quick
     $scope.toggleDoneTask = function(obj){
-    	console.log("toggleDoneTask", obj);
+    	console.log("toggleDoneTask", obj.isCompleted);
     	let status = obj.isCompleted ? true : false; 
     	let tmpObj = {isCompleted:status};
     	todoFactory.editTask(obj.id, tmpObj)
