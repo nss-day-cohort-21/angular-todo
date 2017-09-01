@@ -9,8 +9,8 @@
 app.factory("userFactory", function($q, $http){
 
     let currentUser = null;
-//change let
-    let isAuthenticated = function (){
+
+    const isAuthenticated = function (){
         console.log("userFactory: isAuthenticated");
         return new Promise ( (resolve, reject) => {
             firebase.auth().onAuthStateChanged( (user) => {
@@ -30,9 +30,9 @@ app.factory("userFactory", function($q, $http){
     };
 
 
-    const loginGoogle = function(){
+    // const loginGoogle = function(){
 
-    };
+    // };
 
 
     const logIn = function(){
@@ -50,13 +50,12 @@ app.factory("userFactory", function($q, $http){
 
     };
 
-
     let provider = new firebase.auth.GoogleAuthProvider();
 
     let authWithProvider = function(){
         return firebase.auth().signInWithPopup(provider);
     };
 
-    return {getCurrentUser, loginGoogle, logIn, logOut, register, isAuthenticated, authWithProvider};
+    return {getCurrentUser, logIn, logOut, register, isAuthenticated, authWithProvider};
 
 });
