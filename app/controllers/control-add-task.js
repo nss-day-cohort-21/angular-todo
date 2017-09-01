@@ -23,6 +23,7 @@ app.controller("addTaskCtrl", function($scope, todoFactory, $location){
 	};
 
     $scope.submitTask = function(){
+    	
     	todoFactory.addTask($scope.task)
     	.then((data) => {
     		$location.url("/task-list");
