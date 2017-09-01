@@ -35,8 +35,13 @@ app.factory("userFactory", function($q, $http){
     // };
 
 
-    const logIn = function(){
-
+    const logIn = function(userObj){
+        return firebase.auth().signInWithEmailAndPassword(userObj.email, userObj.password)
+        .catch( function(error){
+            let errorCode = error.code;
+            let errorMessage = error.message;
+            console.log("error", errorCode, errorMessage);
+        });
     };
 
 
@@ -46,8 +51,13 @@ app.factory("userFactory", function($q, $http){
     };
 
 
-    const register = function(){
-
+    const register = function(userObj){
+        return firebase.auth().createUserWithEmailAndPassword(userObj.email, userObj.password)
+        .catch( function(error){
+            let errorCode = error.code;
+            let errorMessage = error.message;
+            console.log("error", errorCode, errorMessage);
+        });
     };
 
     let provider = new firebase.auth.GoogleAuthProvider();
