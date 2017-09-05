@@ -1,7 +1,8 @@
 "use strict";
 
-app.controller("navCtrl", function($scope, $window, userFactory){
-
+app.controller("navCtrl", function($scope, $window, userFactory, filterFactory){
+  
+  $scope.searchText = filterFactory; // Added Tuesday AM
 	$scope.isLoggedIn = false;
 
 	$scope.logout = () => {
@@ -9,7 +10,9 @@ app.controller("navCtrl", function($scope, $window, userFactory){
   	};
 
   firebase.auth().onAuthStateChanged(function(user) {
+    
     if (user) {
+      console.log("user is in the authStateChanged");
       $scope.isLoggedIn = true;
       console.log("currentUser logged in?", user);
       console.log("logged in t-f", $scope.isLoggedIn );

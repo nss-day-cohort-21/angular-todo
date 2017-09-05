@@ -7,10 +7,12 @@
 
  */
 
-app.controller("listCtrl", function($scope, todoFactory, userFactory){
+app.controller("listCtrl", function($scope, todoFactory, userFactory, filterFactory, $rootScope){
 
     $scope.tasks = [];
     let user = userFactory.getCurrentUser();
+    $rootScope.showSearch = true; // Added Tuesday AM
+    $scope.searchText = filterFactory; // Added Tuesday AM
 
     const showAllTasks = function(){
     	todoFactory.getAllTasks(user)

@@ -30,6 +30,7 @@ app.config(($routeProvider) => {
 	.when('/task-list', {
 		templateUrl: 'partials/list.html',
 		controller: 'listCtrl',
+		showSearch: true, //added Tuesday AM
 		resolve: {isAuth}
 	})
 	.when('/item/newItem', {
@@ -60,3 +61,11 @@ app.run(($location, FBCreds) => {
 
 	firebase.initializeApp(authConfig);
 });
+
+//added Tuesday AM
+// example use of $rootScope
+app.run(function($rootScope) {
+  $rootScope.showSearch = false;
+});
+
+
